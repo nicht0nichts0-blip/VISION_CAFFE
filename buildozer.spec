@@ -1,6 +1,6 @@
 [app]
 
-# (string) Title of your application1
+# (string) Title of your application
 title = Food Scale App
 
 # (string) Package name
@@ -19,8 +19,8 @@ source.include_exts = py,png,jpg,kv,atlas
 version = 0.1
 
 # (list) Application requirements
-# CAREFUL: Ensure Pillow is with a capital P
-requirements = python3,kivy,kivymd,opencv,numpy,Pillow
+# Фиксируем стабильный Python 3.11 для сборки opencv и numpy
+requirements = python3==3.11,kivy,kivymd,opencv,numpy,Pillow
 
 # (str) Supported orientations (one of landscape, sensorLandscape, portrait or all)
 orientation = portrait
@@ -35,21 +35,25 @@ fullscreen = 1
 # (list) Permissions
 android.permissions = CAMERA, INTERNET
 
-# (int) Target Android API, should be as high as possible.
+# (int) Target Android API
 android.api = 33
 
-# (int) Minimum API your APK will support.
+# (int) Minimum API required for numpy
 android.minapi = 24
 
 # (str) Android NDK version to use
-android.ndk = 25b
+# Версия 23b гарантирует стабильную сборку С++ библиотек
+android.ndk = 23b
 
 # (bool) If True, then skip trying to update the Android sdk
-# This can be useful to avoid any automatic updates that breaks things
-android.skip_update = False
+android.skip_update = True
 
 # (bool) If True, then automatically accept SDK licenses
-# This is critical for GitHub Actions!
 android.accept_sdk_license = True
+
 # (list) The Android architectural targets to build for
+# Собираем только под современную 64-битную архитектуру для экономии памяти
 android.archs = arm64-v8a
+
+# (int) Number of cores to use when building the NDK
+android.ndk_cores = 1
