@@ -19,7 +19,7 @@ source.include_exts = py,png,jpg,kv,atlas
 version = 0.1
 
 # (list) Application requirements
-# Чистый список без фиксации версии python3, чтобы не ломать hostpython
+# Оставляем чистым, а версию зафиксируем ниже через p4a
 requirements = python3,kivy,kivymd,opencv,numpy,Pillow
 
 # (str) Supported orientations (one of landscape, sensorLandscape, portrait or all)
@@ -45,18 +45,23 @@ android.build_tools_version = 33.0.0
 android.minapi = 24
 
 # (str) Android NDK version to use
-# Стабильная версия 25c, которая требуется новой версии Buildozer
 android.ndk = 25c
 
 # (bool) Разрешаем обновление, чтобы автоматически качались компоненты SDK
 android.skip_update = False
 
-# (bool) Автоматически принимаем лицензии Google (это исправит падение на тексте соглашения)
+# (bool) Автоматически принимаем лицензии Google
 android.accept_sdk_license = True
 
 # (list) The Android architectural targets to build for
-# Сборка только под современную 64-битную архитектуру для экономии памяти
 android.archs = arm64-v8a
 
 # (int) Number of cores to use when building the NDK
 android.ndk_cores = 1
+
+# =============================================================================
+# Python for Android specific (КРИТИЧЕСКИЙ БЛОК ДЛЯ ИСПРАВЛЕНИЯ)
+# =============================================================================
+
+# Насильно заставляем python-for-android использовать стабильный дистрибутив Python 3.11
+p4a.branch = release-2024.01.21
