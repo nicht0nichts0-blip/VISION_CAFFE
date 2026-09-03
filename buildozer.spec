@@ -1,6 +1,6 @@
 [app]
 
-# (string) Title of your application
+# (string) Title of your application1
 title = Food Scale App
 
 # (string) Package name
