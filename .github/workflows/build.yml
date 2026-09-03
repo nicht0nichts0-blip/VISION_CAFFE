@@ -24,7 +24,6 @@ jobs:
         distribution: 'temurin'
         java-version: '17'
 
-    # Добавляем этот шаг для предотвращения падения из-за нехватки памяти
     - name: Set up Swap Space
       uses: pierotofy/set-swap-space@v1.0
       with:
@@ -42,4 +41,11 @@ jobs:
         LANG: en_US.UTF-8
         LC_ALL: en_US.UTF-8
       run: |
+        buildozer android clean
         yes | buildozer android debug
+
+    - name: Upload APK
+      uses: actions/upload-artifact@v4
+      with:
+        name: food-scale-app
+        path: bin/*.apk
