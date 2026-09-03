@@ -1,0 +1,1 @@
+requirements = python3,kivy,kivymd,opencv,numpy,pillow
