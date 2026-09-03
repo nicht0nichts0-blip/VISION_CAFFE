@@ -20,7 +20,7 @@ version = 0.1
 
 # (list) Application requirements
 # Фиксируем стабильный Python 3.11 для сборки opencv и numpy
-requirements = python3==3.11,kivy,kivymd,opencv,numpy,Pillow
+requirements = python3,kivy,kivymd,opencv,numpy,Pillow
 
 # (str) Supported orientations (one of landscape, sensorLandscape, portrait or all)
 orientation = portrait
