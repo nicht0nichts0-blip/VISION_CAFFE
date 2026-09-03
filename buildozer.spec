@@ -39,7 +39,7 @@ android.permissions = CAMERA, INTERNET
 android.api = 33
 
 # (int) Minimum API your APK will support.
-android.minapi = 21
+android.minapi = 24
 
 # (str) Android NDK version to use
 android.ndk = 25b
