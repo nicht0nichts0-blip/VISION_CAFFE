@@ -38,6 +38,10 @@ android.permissions = CAMERA, INTERNET
 # (int) Target Android API
 android.api = 33
 
+# (str) Android build-tools version to use
+# Явно задаем версию инструментов сборки, чтобы скачался aidl
+android.build_tools_version = 33.0.0
+
 # (int) Minimum API required for numpy
 android.minapi = 24
 
@@ -45,8 +49,8 @@ android.minapi = 24
 # Версия 23b гарантирует стабильную сборку С++ библиотек
 android.ndk = 23b
 
-# (bool) If True, then skip trying to update the Android sdk
-android.skip_update = True
+# (bool) Разрешаем обновление, чтобы скачать недостающие компоненты SDK
+android.skip_update = False
 
 # (bool) If True, then automatically accept SDK licenses
 android.accept_sdk_license = True
