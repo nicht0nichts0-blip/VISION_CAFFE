@@ -47,7 +47,7 @@ android.minapi = 24
 
 # (str) Android NDK version to use
 # Версия 23b гарантирует стабильную сборку С++ библиотек
-android.ndk = 23b
+android.ndk = 25c
 
 # (bool) Разрешаем обновление, чтобы скачать недостающие компоненты SDK
 android.skip_update = False
