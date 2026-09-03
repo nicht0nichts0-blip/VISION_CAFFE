@@ -51,3 +51,5 @@ android.skip_update = False
 # (bool) If True, then automatically accept SDK licenses
 # This is critical for GitHub Actions!
 android.accept_sdk_license = True
+# (list) The Android architectural targets to build for
+android.archs = arm64-v8a
