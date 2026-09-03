@@ -25,7 +25,7 @@ jobs:
         distribution: 'temurin'
         java-version: '17'
 
-    # Убрали openjdk-17-jdk из списка ниже, чтобы apt-get не выдавал ошибку надеюсь
+    # Убрали openjdk-17-jdk из списка ниже, чтобы apt-get не выдавал ошибку надеюсь1
     - name: Install dependencies
       run: |
         sudo apt-get update
